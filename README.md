@@ -8,8 +8,6 @@ Five-or-More is a 9×9 puzzle game. Each turn you move one tile along a clear pa
 
 This project builds AI agents that maximise score in this single-agent, fully observable stochastic environment (a Markov decision process with a random "adversary"). It measures how evaluation-function design and search under uncertainty affect performance.
 
-<p align="center"><img src="docs/board_representation.png" width="620" alt="Game board and its matrix encoding"></p>
-
 ## Results
 
 ![Agent scores](docs/results.png)
@@ -24,14 +22,14 @@ This project builds AI agents that maximise score in this single-agent, fully ob
 | Adaptive + two-step lookahead | 2,740.6 | 6,138 | 20 |
 | **Adaptive + Monte Carlo rollouts** | **3,649.2** | **7,200** | 20 |
 
-Top daily human scores on the official platform typically fall between 2,000 and 10,000. Full results, including every ablation, are in Table 3 of the paper.
+Top daily human scores on the official platform typically fall between 2,000 and 8,000. Full results, including every ablation, are in Table 3 of the paper.
 
 **Key findings**
 
 - **Heuristic design matters most.** Adding gap potential to line potential raised the mean score by 316%. Clustering *lowered* it by 35%, because spatial proximity ignores the game's path constraints, so it was dropped.
 - **State-dependent weights beat fixed weights.** Re-weighting features by game phase and board state lifted the mean score by 92.5% over the grid-searched composite.
-- **Search amplifies the evaluator.** Monte Carlo rollouts improved the adaptive agent's mean by 51.7%, versus 37.2% for the weaker composite agent.
-- **Deep RL was promising but inconclusive.** The actor–critic agent scored 6,488 in its final training episode but had not converged within 50 episodes.
+- **Search amplifies the evaluator.** Monte Carlo rollouts improved the adaptive agent's mean by 51.7%, versus 37.2% for the weaker composite agent. The drawback being an exponential increase in computation complexity, which was balanced by the application of top-k pruning and other optimisation methods
+- **Deep RL was promising but inconclusive.** The actor–critic agent scored 6,488 in its final training episode but had not converged within 50 episodes. Future work could explore the integration of hybrid learning models further.
 
 ## Approach
 
