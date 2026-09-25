@@ -2,7 +2,7 @@
 
 **BSc dissertation, Durham University (2026), awarded First-Class** · [Read the paper (PDF)](paper/dissertation.pdf)
 
-> Paper title: *Computer Playing against a Random Adversary*. Submitted under my legal name, Zheng Rong Chua.
+> Paper title: *Computer Playing against a Random Adversary*.
 
 Five-or-More is a 9×9 puzzle game. Each turn you move one tile along a clear path, aiming to form lines of five or more same-coloured tiles. If no line clears, three random tiles spawn (you see their colours in advance, but not where they will land), and the game ends when the board fills.
 
